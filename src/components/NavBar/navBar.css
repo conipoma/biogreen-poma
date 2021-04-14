@@ -1,17 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
 
 .bg-light {
-    background-color: #dcc4f1!important;
+    background-color: #A3AC9B!important;
     font-size: 18px;
 }
 
 .navbar-light .navbar-brand {
-    color: black;
+    color: white;
     font-family: 'Abhaya Libre', serif;
     font-size: 40px;
 }
 
 .nav-link {
     padding-left: 6rem !important;
+}
 
+.cart-widget {
+    width: 2rem;
 }
