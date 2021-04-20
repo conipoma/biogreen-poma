@@ -1,0 +1,11 @@
+.countButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+    padding-top: 3rem;
+};
+
+.addButton {
+    width: 10%;
+}
