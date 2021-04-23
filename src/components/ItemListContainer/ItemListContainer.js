@@ -1,18 +1,27 @@
-import React from 'react';
-import './ItemListContainer.css';
-import { Container, Row, Col } from 'bootstrap-4-react';
+import React, { useState, useEffect } from 'react';
+import Item from '../Item/Item';
+import { ItemList } from '../Item/ItemList';
 
-export default function containerHome(props){
-    
-      return (
-          <div className="divGral">
-              <Container fluid className="helloHome">
-                  <div className="sldoHome">
-                      <h3>{props.greeting}</h3>
-                      <h2>Todo va a estar bien...</h2>
-                  </div>
-              </Container>
-          </div>
+export default function ShowItem(){
+
+    const [item, setItem] = useState([]);
+
+    useEffect(() => {
         
-      )
+        ItemList.map(element => console.log(element));
+        setItem(ItemList)
+
+
+    },[])
+
+    return(
+        <div>
+            {
+                item.map(singleItem => (
+                    <Item title={singleItem.title} image = {singleItem.image} description = {
+                      singleItem.description} price= {singleItem.price}/> 
+                ))
+            }
+        </div>
+    )
 }
