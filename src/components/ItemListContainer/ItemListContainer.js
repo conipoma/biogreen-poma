@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import Item from '../Item/Item';
-import { ItemList } from '../Item/ItemList';
+import './ItemListContainer.css';
+import ItemList from '../ItemList/ItemList';
 
-export default function ShowItem(){
+export default function ShowItemLisContainer(){
 
     const [item, setItem] = useState([]);
 
     useEffect(() => {
-        
-        ItemList.map(element => console.log(element));
-        setItem(ItemList)
-
-
-    },[])
+        setTimeout(() => {
+            fetch('https://raw.githubusercontent.com/conipoma/biogreen-poma/main/src/components/Item/Item.json')
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(typeof(data))
+                console.log(data)
+                setItem(data)
+            })
+        }, 2000);
+    
+    }, []);
 
     return(
-        <div>
-            {
-                item.map(singleItem => (
-                    <Item title={singleItem.title} image = {singleItem.image} description = {
-                      singleItem.description} price= {singleItem.price}/> 
-                ))
-            }
+        <div className="itemlistcontainer">
+            <ItemList ItemData= {item} />
         </div>
     )
 }
