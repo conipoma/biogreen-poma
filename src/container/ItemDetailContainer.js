@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from '../components/ItemDetail/ItemDetail'
-const {getProduct} = require('../Services/Services') 
+const {getIdProducts} = require('../Services/Services') 
 
 export default function ShowItemDetailContainer() {
 
@@ -9,10 +9,14 @@ export default function ShowItemDetailContainer() {
     useEffect(() => {
 
         setTimeout(()=> {
-            getProduct
-            .then(data=>setItemDetail(data))
-            .catch(err=>console.log(err))
+            getIdProducts
+            .then((data)=> {
+
+                const especificItem = data.find(product=> product.id === 1);
+                setItemDetail(especificItem)
+            })  
         }, 2000)
+        
 
     }, []);
 
@@ -24,3 +28,12 @@ export default function ShowItemDetailContainer() {
         </div>
     )
 }
+
+
+
+
+// setTimeout(()=> {
+//     getProduct
+//     .then(data=>setItemDetail(data))
+//     .catch(err=>console.log(err))
+// }, 2000)

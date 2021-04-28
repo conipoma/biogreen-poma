@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ItemListContainer.css';
-import ItemList from '../ItemList/ItemList';
+import ItemList from '../../components/ItemList/ItemList';
 
 export default function ShowItemLisContainer(){
 
