@@ -1,0 +1,28 @@
+.imgItemDetail {
+    width: 20%;
+    padding: 10px;
+}
+
+.item-title {
+    font-size: 30px;
+}
+.infoProduct {
+    font-size: 18px;
+    display: flex;
+    align-items: baseline;
+}
+
+.productPageOne {
+    margin: 10px;
+    width: 30%;
+    height: 50%;
+}
+
+.productPageTwo {
+    margin: 10px;
+    width: 50%;
+}
+
+.itemProduct {
+    /* margin: 15px; */
+}
