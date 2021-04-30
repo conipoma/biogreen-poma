@@ -1,36 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Navbar, Nav, Collapse, Dropdown } from 'bootstrap-4-react';
 import './navBar.css';
 import CartWidget from '../CartWidget/CartWidget.js'
+import { useHistory } from 'react-router-dom'
 
-export default class NavBar extends Component {
-    render() {
+export default function NavBar() {
+
+      let history = useHistory();
+
+
       return (
         <Navbar expand="lg" light bg="light">
-          <Navbar.Brand href="#">Essencial</Navbar.Brand>
+          <Navbar.Brand onClick={()=>history.push('/')}>Essencial</Navbar.Brand>
           
           <Navbar.Toggler target="#navbarNav" />
           <Collapse navbar id="navbarNav">
             <Navbar.Nav>
-              <Nav.ItemLink href="#">Sobre nosotros</Nav.ItemLink>
-              <Nav.ItemLink href="#">Contacto</Nav.ItemLink>              
+              <Nav.ItemLink onClick={()=>history.push('/nosotros')}>Sobre nosotros</Nav.ItemLink>
               <Nav.Item dropdown>
                 <Nav.Link dropdownToggle>Productos</Nav.Link>
                 <Dropdown.Menu>
-                  <Dropdown.Item>Aromatizantes</Dropdown.Item>
-                  <Dropdown.Item>Aceites</Dropdown.Item>
-                  <Dropdown.Item>Difusores</Dropdown.Item>
-                  <Dropdown.Item>Inciensos</Dropdown.Item>
-                  <Dropdown.Item>Humidificadores</Dropdown.Item>
-                  <Dropdown.Item>Productos de limpieza</Dropdown.Item>
-                  <Dropdown.Item>Jabones</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>history.push('/category/aromatizantes')}>Aromatizantes</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>history.push('/category/aceites')}>Aceites</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>history.push('/category/difusores')}>Difusores</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>history.push('/category/limpieza')}>Limpieza Biodegradable</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>history.push('/category/bebe')}>Bebé</Dropdown.Item>
                 </Dropdown.Menu>
               </Nav.Item>
+              <Nav.ItemLink onClick={()=>history.push('/contacto')}>Contacto</Nav.ItemLink>   
+              {/* futuro link de descarga de catálogo */}
+              <Nav.ItemLink onClick={()=>history.push('/catalogo')}>Catálogo</Nav.ItemLink>           
             </Navbar.Nav>
           </Collapse>
           <Navbar.Brand className="cart-widget"><CartWidget /></Navbar.Brand>
         </Navbar>
       )
     }
-  }
+  
 

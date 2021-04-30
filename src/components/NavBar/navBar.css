@@ -6,15 +6,23 @@
 }
 
 .navbar-light .navbar-brand {
-    color: white;
+    color: white !important;
     font-family: 'Abhaya Libre', serif;
     font-size: 40px;
+    text-align: left;
+
 }
 
 .nav-link {
     padding-left: 6rem !important;
+    position: sticky;
+
 }
 
 .cart-widget {
     width: 2rem;
+}
+
+.nav-link {
+    color: white;
 }

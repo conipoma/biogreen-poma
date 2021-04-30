@@ -6,7 +6,7 @@ import './Item.css';
 export default function ItemCard({title, image, description, price})
         {
     return (
-      <Card style={{ width: '18rem' }} >
+      <Card className="cardItems" style={{ width: '18rem' }} >
         <Card.Image src={image} top/>
         <Card.Body>
           <Card.Title>{title}

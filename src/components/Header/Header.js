@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import { Container, Row, Col } from 'bootstrap-4-react';
+import { Container } from 'bootstrap-4-react';
 
 export default function Header(props){
     

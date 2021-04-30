@@ -1,6 +1,7 @@
 .itemlistcontainer {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 
 }
 
@@ -8,5 +9,6 @@
 
 .card {
     display: flex;
-
+    padding: 10px;
+    
 }

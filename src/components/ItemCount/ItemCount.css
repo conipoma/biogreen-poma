@@ -1,7 +1,8 @@
 .countButton {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-items: center;
+    justify-content: center;
     /* width: 20%; */
     /* padding-top: 3rem; */
 };

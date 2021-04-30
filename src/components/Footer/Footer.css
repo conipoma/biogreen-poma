@@ -1,0 +1,16 @@
+.FooterPage {
+    background-color: #A3AC9B;
+    height: 35px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    z-index:2000;
+}
+
+.credits {
+    color: rgb(237, 233, 222);
+    padding-top: 6px;
+    font-size: 12px;
+}
