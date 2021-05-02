@@ -5,10 +5,10 @@ import Navbar from './components/NavBar/navBar';
 import Header from './components/Header/Header';
 import ItemListContainer from './container/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './container/ItemDetailContainer';
-import HomePageContainer from './container/HomePage/HomePageContainer';
-import ProductosPageContainer from './container/ProductosPage/ProductosPageContainer';
-import ContactoPageContainer from './container/ContactoPage/ContactoPageContainer';
-import NosotrosPageContainer from './container/NosotrosPage/NosotrosPageContainer';
+import HomePageContainer from './container/Pages/HomePageContainer';
+import ProductosPageContainer from './container/Pages/ProductosPageContainer';
+import ContactoPageContainer from './container/Pages/ContactoPageContainer';
+import NosotrosPageContainer from './container/Pages/NosotrosPageContainer';
 import Footer from './components/Footer/Footer';
 
 
@@ -26,21 +26,26 @@ function App() {
           <Header greeting="Somos bienestar para tu hogar" name="Essencial"/>  
         </div> 
           <HomePageContainer />
-          <ItemListContainer />
       </Route>
 
   {/* Muestra todos los productos */}
-      <Route path="/category">
+      <Route exact path="/productos">
           <ProductosPageContainer />
-          <ItemListContainer />
+          {/* <ItemListContainer /> */}
           {/* <ItemDetailContainer /> */}
       </Route>
 
   {/* Muestra un producto particular */}
-      <Route exact path="/category/:categoryId">
+      {/* <Route exact path="/productos">
           <ItemDetailContainer />
           <ProductosPageContainer />
+      </Route> */}
+
+      <Route path="/item/:id">
           <ItemDetailContainer />
+          {/* <ProductosPageContainer /> */}
+          {/* <ItemListContainer /> */}
+
       </Route>
 
       <Route path="/nosotros">

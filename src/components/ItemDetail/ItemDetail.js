@@ -1,19 +1,20 @@
 import React from 'react';
 import './ItemDetail.css';
 
-export default function showItemDetail({productos}) {
+
+export default function showItemDetail({product}) {
     return(
         <div className="itemDetail">
             <h2 className="item-title">Detalles del producto</h2>
 
-            <div className="infoProduct" key={IDBCursor.productos}>
+            <div className="infoProduct" key={product.id}>
                 <div className="productPageOne">
-                    <img className="imgItemDetail" src= {productos.image} alt={productos.title}></img>            
+                    <img className="imgItemDetail" src= {product.image} alt={product.title}></img>            
                 </div>
                 
                 <ul className="productPageTwo">
-                    <li>{productos.description}</li>
-                    <li>{productos.price}</li>
+                    <li>{product.description}</li>
+                    <li>{product.price}</li>
               </ul>
             </div>
         </div>

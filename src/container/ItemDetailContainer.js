@@ -1,40 +1,43 @@
 import React, { useState, useEffect } from "react";
+import getProductsId from '../Services/getProductsId'
 import ItemDetail from '../components/ItemDetail/ItemDetail';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
 
-const {getIdProducts} = require('../Services/Services'); 
+export default function ItemDetailContainer({id}) {
 
-export default function ShowItemDetailContainer() {
+    <h1>Soy el item container</h1>
 
-    const {id} = useParams();
-    console.log(id)
+    const [itemDetail, setItemDetail] = useState({
+        title: '', 
+        description: '', 
+        image: '',
+        price: '', 
+        categoryId: ''
+    })
 
-
-    const [itemDetail, setItemDetail] = useState([])
-    
     useEffect(() => {
+        getProductsId(id)
+            .then(item => {
+                setItemDetail({ 
+                    title: item.title,
+                    description: item.description,
+                    image:item.image,
+                    price: item.price, 
+                    categoryId: item.categoryId
+                })
+            })        
+        }, [id])
+                
 
-        setTimeout(()=> {
-            getIdProducts(id)
-                .then((data)=> {
-                    console.log(data);
-                    console.log(id)
-                    const [especificItem] = data.filter(product=> product.id === id);
-                    setItemDetail(especificItem);
-                })  
-        }, 2000)
-        
+    return(
 
-    }, [id]);
-
-    // const {itemId} = useParams();
-    
-    return (
-        <div className="itemDetailContainer">
-            <ItemDetail productos={itemDetail}/>
+        <div>
+            <h1>{itemDetail.title}</h1>
+            <p>{itemDetail.description}</p>
         </div>
-    )
+            // <div className="itemDetailContainer">
+            //         <ItemDetail product={itemDetail} />
+            // </div>
+    )        
 }
-
-
