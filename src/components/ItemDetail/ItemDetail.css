@@ -4,7 +4,8 @@
 }
 
 .item-title {
-    font-size: 30px;
+    font-size: 2.5rem;
+    padding-top: 2rem;
 }
 .infoProduct {
     font-size: 18px;

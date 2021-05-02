@@ -1,9 +1,10 @@
-import { products } from './data'
+import data from './data'
+// import { products } from './data'
 
 function getProducts (){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-           resolve(products) 
+           resolve(data) 
         }, 2000);
     })
 }

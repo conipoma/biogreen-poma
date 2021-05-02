@@ -4,17 +4,14 @@ import ItemDetailContainer from '../ItemDetailContainer'
 import ItemListContainer from '../ItemListContainer/ItemListContainer';
 
 
-// const { getProduct } = require('../../Services/Services');
-
-
 export default function ProductosPageContainer() {
    const params = useParams()
-   const id = params.id
+//    const id = params.id
     return (
         <div>
-            Hola desde ProductosPage 
+            <h2 className="item-title">Nuestros productos</h2>
             <ItemListContainer />
-            <ItemDetailContainer id ={id}/>
+            {/* <ItemDetailContainer id ={id}/> */}
         </div>
     )
 }

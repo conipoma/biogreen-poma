@@ -3,10 +3,11 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/NavBar/navBar';
 import Header from './components/Header/Header';
-import ItemListContainer from './container/ItemListContainer/ItemListContainer';
+// import ItemListContainer from './container/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './container/ItemDetailContainer';
 import HomePageContainer from './container/Pages/HomePageContainer';
 import ProductosPageContainer from './container/Pages/ProductosPageContainer';
+import ProductItemContainer from './container/Pages/ProductItemContainer'
 import ContactoPageContainer from './container/Pages/ContactoPageContainer';
 import NosotrosPageContainer from './container/Pages/NosotrosPageContainer';
 import Footer from './components/Footer/Footer';

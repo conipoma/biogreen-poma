@@ -1,11 +1,16 @@
-import {products} from './data'
+// import data from './data'
+import products from './data'
 
 function getProductsId (id) {
+    console.log("esto me trae data")
+    console.log(typeof(products))
+    console.log(products)
     return new Promise((resolve) => {
         setTimeout(() => {
-            const findProduct= products.filter((product) => {
-                return product.id == id
+            const findProduct= products.find((product) => {
+                return product.id === Number(id)
             })
+            console.log(findProduct)
             resolve(findProduct)
         }, 2000);
     })

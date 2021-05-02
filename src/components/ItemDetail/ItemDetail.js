@@ -2,40 +2,23 @@ import React from 'react';
 import './ItemDetail.css';
 
 
-export default function showItemDetail({product}) {
+export default function ShowItemDetail({item}) {
+    // console.log(item)
     return(
         <div className="itemDetail">
             <h2 className="item-title">Detalles del producto</h2>
 
-            <div className="infoProduct" key={product.id}>
+            <div className="infoProduct" key={item.id}>
                 <div className="productPageOne">
-                    <img className="imgItemDetail" src= {product.image} alt={product.title}></img>            
+                    <img className="imgItemDetail" src= {item.image} alt={item.title}></img>            
                 </div>
                 
                 <ul className="productPageTwo">
-                    <li>{product.description}</li>
-                    <li>{product.price}</li>
-              </ul>
+                    <li>{item.description}</li>
+                    <li>${item.price}</li>
+                </ul>
             </div>
         </div>
     );
 }
 
-
-
-
-// {
-//     productos.map((eachItem) => {
-//     return(
-//         <div className="infoProduct" key={eachItem.id}>
-//             <div className="productPageOne">
-//                 <img className="imgItemDetail" src = {eachItem.image}></img>
-//             </div>
-//             <div className="productPageTwo">
-//                 <p className="itemProduct">{eachItem.description}</p>
-//                 <p className="itemProduct"> ${eachItem.price}</p>
-//                 <hr></hr>
-//             </div>
-//         </div>)   
-//     })
-// }  
