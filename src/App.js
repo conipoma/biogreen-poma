@@ -3,7 +3,6 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/NavBar/navBar';
 import Header from './components/Header/Header';
-// import ItemListContainer from './container/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './container/ItemDetailContainer';
 import HomePageContainer from './container/Pages/HomePageContainer';
 import ProductosPageContainer from './container/Pages/ProductosPageContainer';
@@ -11,6 +10,7 @@ import ProductItemContainer from './container/Pages/ProductItemContainer'
 import ContactoPageContainer from './container/Pages/ContactoPageContainer';
 import NosotrosPageContainer from './container/Pages/NosotrosPageContainer';
 import Footer from './components/Footer/Footer';
+import CartPageContainer from './container/Pages/CartPageContainer';
 
 
 function App() {
@@ -32,21 +32,12 @@ function App() {
   {/* Muestra todos los productos */}
       <Route exact path="/productos">
           <ProductosPageContainer />
-          {/* <ItemListContainer /> */}
-          {/* <ItemDetailContainer /> */}
+
       </Route>
 
-  {/* Muestra un producto particular */}
-      {/* <Route exact path="/productos">
-          <ItemDetailContainer />
-          <ProductosPageContainer />
-      </Route> */}
-
+  {/* Muestra un item/producto */}
       <Route path="/item/:id">
-          <ItemDetailContainer />
-          {/* <ProductosPageContainer /> */}
-          {/* <ItemListContainer /> */}
-
+          <ProductItemContainer />
       </Route>
 
       <Route path="/nosotros">
@@ -56,9 +47,10 @@ function App() {
       <Route path="/contacto">
           <ContactoPageContainer />
       </Route>
-        
-        
-
+      
+      <Route path="/cart">
+        <CartPageContainer />
+      </Route>
 
     </Switch>
       </Router>

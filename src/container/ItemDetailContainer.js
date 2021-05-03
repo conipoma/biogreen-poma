@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import getProductsId from '../Services/getProductsId'
 // import ItemDetail from '../components/ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
-import ItemDetail from '../components/ItemDetail/ItemDetail'
+import { useHistory } from 'react-router-dom';
+import ItemDetail from '../components/ItemDetail/ItemDetail';
+import ItemCountContainer from '../container/ItemCountContainer';
 
 
 export default function ItemDetailContainer() {
@@ -29,17 +31,10 @@ export default function ItemDetailContainer() {
         })        
     }, [])
     
-    
     return(
         
         <div>
             <ItemDetail item = {itemDetail} />
-
-            {/* <h1>{itemDetail.title}</h1>
-            <p>{itemDetail.description}</p> */}
         </div>
-            // <div className="itemDetailContainer">
-            //         <ItemDetail product={itemDetail} />
-            // </div>
     )        
 }

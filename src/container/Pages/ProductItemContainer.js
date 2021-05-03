@@ -1,11 +1,11 @@
 import React from 'react';
-import ItemListContainer from '../ItemListContainer/ItemListContainer'
+import ItemDetailContainer from '../../container/ItemDetailContainer'
 
 export default function ProductItemContainer() {
     
     return (
         <div>
-            <ItemListContainer />
+            <ItemDetailContainer />
         </div>
     )
 }

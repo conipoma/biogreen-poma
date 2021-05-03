@@ -1,45 +1,54 @@
-import React from 'react';
-import Counter from '../components/ItemCount/ItemCount';
+import React, { useState, useEffect } from "react";
+import ItemCount from '../components/ItemCount/ItemCount';
 
-export default class ItemCounterContainer extends React.Component {
+export default function ItemCountContainer ({item, setQuantityProductAdded, setFinishBuy}) {
 	
-    constructor(props){
-          super(props);
-  
-          this.state = {
-              number:0,
-              stock:5
-          }
-  
-          this.onDrecrement = this.onDrecrement.bind(this);
-  
+    const [product, setProduct] = useState(0);
+  //Cantidad de item que pusiste en el contador
+
+    const [stock, setStock] = useState(5);
+    // Ese useState de arriba debería hacer un llamado a la base de datos para saber la cantidad de stock que hay. Pero en la consigna nos piden que solo que tenga 5.
+
+    const [itemAdd, setItemAdd] = useState(false);
+    // Seteamos el item y su cantidad
+
+    useEffect( ()=> {
+        console.log('Se actualizó el componente de la botonera')
+      }, [product])
+
+      // Función onADD que lo que setea es los items y los pasa a ItemDetail
+      function onAdd(quantity) {
+        console.log(`Se ejecutó función onAdd`)
+        setItemAdd(true)
+        setQuantityProductAdded( { productId: product.id, productPrice: product.price, quantity: product} )
+        setFinishBuy(true);
       }
 
-      onIncrement = () => {
-          if (this.state.stock <= this.state.number) {
-              alert('No hay stock dispoble');
+      // Función que suma +1 en el botón
+      function increment() {
+          if (stock > product) {
+            setProduct(product + 1);
           } else {
-          this.setState({ number: this.state.number + 1 });
-          }; 
-      }
-  
-      onDrecrement = () => {
-          if (this.state.number > 0) {
-            this.setState({ number: this.state.number - 1 });
-          } else {
-              alert('No tienes productos agregados')
+              alert('No tenemos suficiente stock')
           }
       }
-  
-      render(){
-          
-          return(
-              <div>
-                  {console.log('Render desde counter container')}
-                  {/* <Visualizer number={this.state.number} /> */}
-                  <Counter number={this.state.number} increment={this.onIncrement} decrement={this.onDrecrement}/>
-              </div>
-          )
+
+      // Función que suma -1 en el botón
+      function decrement() {
+        if (product > 1) {
+            setProduct(product - 1);
+        } else {
+          alert("Tiene que agregar al menos un producto");
+        }
       }
-  }
-      
+
+      return (
+        <ItemCount
+          increment={increment}
+          decrement={decrement}
+          onAdd={onAdd}
+          itemQuantity={product}
+          itemAdd={setItemAdd}
+        />
+      );
+    }
