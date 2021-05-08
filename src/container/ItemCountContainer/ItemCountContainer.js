@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ItemCount from '../components/ItemCount/ItemCount';
+import ItemCount from '../../components/ItemCount/ItemCount';
 
 export default function ItemCountContainer ({item, setQuantityProductAdded, setFinishBuy}) {
 	

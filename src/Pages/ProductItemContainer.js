@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemDetailContainer from '../../container/ItemDetailContainer'
+import ItemDetailContainer from '../container/ItemDetailContainer/ItemDetailContainer'
 
 export default function ProductItemContainer() {
     

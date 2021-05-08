@@ -1,28 +1,75 @@
-import React, { useState, useEffect } from 'react';
-import ItemList from '../../components/ItemList/ItemList';
+import React, {useState, useEffect} from 'react';
 import './ItemListContainer.css';
+import ItemList from '../../components/ItemList/ItemList'; 
+import { useParams } from 'react-router';
 import getProducts from '../../Services/getProducts';
-import { useParams } from 'react-router-dom';
-import { getProductsId } from '../../Services/getProductsId';
 
 
 export default function ItemListContainer(){
-    // en el useState se pone un array vacio para poder luego ejecutar la funcion map() en el return
-    const [items, setItems] = useState([]);
 
-    const {id} = useParams();
-
+    const {category} = useParams()
+    console.log(category)
+    const [item, setItem] = useState([]);
+  
     useEffect(() => {
         getProducts()
-            .then(data => {
-                setItems(data)
-            })
-    }, [])
+        .then((data) => {
+            const categoryId = data.filter(product => product.category === category) 
+            console.log(categoryId)
+            setItem(categoryId)
+            console.log(category)
+        })        
+    
+},[] );
 
 
     return (
-            <ItemList items={items}/>
-    )
+        <div className="itemlistcontainer">
+            <ItemList itemData={item}/>
+        </div>
+      );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import ItemList from '../../components/ItemList/ItemList';
+// import './ItemListContainer.css';
+// import getProducts from '../../Services/getProducts';
+// import { useParams } from 'react-router-dom';
+// import { getProductsId } from '../../Services/getProductsId';
+
+
+// export default function ItemListContainer(){
+//     // en el useState se pone un array vacio para poder luego ejecutar la funcion map() en el return
+//     const [items, setItems] = useState([]);
+
+//     const {id} = useParams();
+
+//     useEffect(() => {
+//         getProducts()
+//             .then(data => {
+//                 setItems(data)
+//             })
+//     }, [])
+
+
+//     return (
+//             <ItemList items={items}/>
+//     )
     // useEffect(() => {
     //     const filterCategory = (item) => { 
     //         return item.categoryId === categoryId;
@@ -39,4 +86,4 @@ export default function ItemListContainer(){
     //         <ItemList ItemData= {item} />
     //     </div>
     // )
-}
+// }

@@ -1,8 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import './ItemDetail.css';
-import ItemCountContainer from '../../container/ItemCountContainer';
- 
+import ItemCountContainer from '../../container/ItemCountContainer/ItemCountContainer';
 import { useHistory } from 'react-router-dom';
 import { ButtonGroup, Button } from 'bootstrap-4-react';
 
@@ -29,11 +28,12 @@ export default function ItemDetail({item}) {
                 <div className="productPageOne">
                     <img className="imgItemDetail" src= {item.image} alt={item.title}></img>            
                 </div>
-                
                 <ul className="productPageTwo">
+                    
                     <li>{item.title}</li>
-                    <li>{item.description}</li>
-                    <li>${item.price}</li>
+                    <li>Categoría: {item.category}</li>
+                    <li>Descripción: {item.description}</li>
+                    <li>Precio: ${item.price}</li>
                 </ul>
             </div>
         

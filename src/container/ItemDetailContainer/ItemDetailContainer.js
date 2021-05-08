@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from "react";
-import getProductsId from '../Services/getProductsId'
+import getProductsId from '../../Services/getProductsId'
 // import ItemDetail from '../components/ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
-import ItemDetail from '../components/ItemDetail/ItemDetail';
-import ItemCountContainer from '../container/ItemCountContainer';
+import ItemDetail from '../../components/ItemDetail/ItemDetail';
 
 
 export default function ItemDetailContainer() {
     const {id} = useParams();
-    console.log(id)
+    console.log(typeof id);
+    
     const [itemDetail, setItemDetail] = useState({
         title: '', 
         description: '', 
         image: '',
         price: '', 
-        categoryId: ''
+        category: ''
     })
     
     useEffect(() => {
@@ -26,7 +25,7 @@ export default function ItemDetailContainer() {
                 description: item.description,
                 image:item.image,
                 price: item.price, 
-                categoryId: item.categoryId
+                category: item.category
             })
         })        
     }, [])
