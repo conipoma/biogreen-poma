@@ -35,7 +35,6 @@ export default function AppRouter() {
           {/* Ruta nosotros */}
           <Route path="/nosotros">
               <NosotrosPageContainer />
-              <ItemList />
           </Route>
           
           {/* Ruta contacto */}
