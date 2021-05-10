@@ -21,6 +21,7 @@ export default function ItemDetailContainer() {
         getProductsId(id)
         .then(item => {
             setItemDetail({ 
+                id: item.id,
                 title: item.title,
                 description: item.description,
                 image:item.image,
@@ -28,7 +29,7 @@ export default function ItemDetailContainer() {
                 category: item.category
             })
         })        
-    }, [])
+    }, [id])
     
     return(
         

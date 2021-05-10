@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ItemCount from '../../components/ItemCount/ItemCount';
+import { CartContext } from '../../Context/CartContext/CartContext';
 
 export default function ItemCountContainer ({item, setQuantityProductAdded, setFinishBuy}) {
+  const { addToCart } = useContext(CartContext);
 	
     const [product, setProduct] = useState(0);
   //Cantidad de item que pusiste en el contador
@@ -17,11 +19,23 @@ export default function ItemCountContainer ({item, setQuantityProductAdded, setF
       }, [product])
 
       // Función onADD que lo que setea es los items y los pasa a ItemDetail
-      function onAdd(quantity) {
-        console.log(`Se ejecutó función onAdd`)
+      function onAdd() {
+        console.log(`Se ejecutó función onAdd`);
+        console.log("setQuantityProductAdded: " + setQuantityProductAdded);
+        console.log(setQuantityProductAdded);
         setItemAdd(true)
         setQuantityProductAdded( { productId: product.id, productPrice: product.price, quantity: product} )
         setFinishBuy(true);
+
+        const newItem = {
+          id: item.id,
+          category: item.category,
+          title: item.title,
+          price: item.price,
+          quantity: product
+        };
+        console.log(newItem);
+        addToCart(newItem);
       }
 
       // Función que suma +1 en el botón

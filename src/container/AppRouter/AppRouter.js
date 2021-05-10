@@ -8,15 +8,13 @@ import ProductItemContainer from '../../Pages/ProductItemContainer'
 import ContactoPageContainer from '../../Pages/ContactoPageContainer';
 import NosotrosPageContainer from '../../Pages/NosotrosPageContainer';
 import Footer from '../../components/Footer/Footer';
-import CartPageContainer from '../../Pages/CartPageContainer'; 
-import { CartContext } from '../../Context/CartContext/CartContext';
+import CartPageContainer from '../CartPage/CartPageContainer';
 import ItemList from '../../components/ItemList/ItemList'
 
 
 
 export default function AppRouter() {
     return (
-        <CartContext.Provider value ={[]} >
           <Router>
           <div className="App">
             <Navbar />
@@ -59,6 +57,5 @@ export default function AppRouter() {
 
           </Switch>
         </Router>
-      </ CartContext.Provider>
     );
 }

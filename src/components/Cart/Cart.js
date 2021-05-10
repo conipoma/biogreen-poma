@@ -1,56 +1,58 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../../Context/CartContext/CartContext';
 
-export default function CartPage() {
+export default function CartPage({ itemSale }) {
     
-      const cart = useContext(CartContext)
-    
-      if (cart.length === 0) return <h1>Aun no agregaste nada al carrito</h1>
-    
-      return (
-            <ul>
-                {cart.map(item => {
-                    return <li key={item.id}>
-                    <span> producto: {item.title}</span>
-                    <span> total: {item.count}</span>
-                    </li>
-                })}
-                <button>Comprar</button>
-            </ul>
-      )
-}
+  const { updateToCart, handleRemove } = useContext(CartContext);
+  console.log(itemSale); //para test
 
-
-
-
-
-
-
-
-
-
-// const {cart, clear, removeItem} = useContext(CartContext)
-
-// function showcart(){
-//     console.log(cart)
-//   }
+  function capitalizarPrimeraLetra(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+  }
   
-//   return (
-//         <div className="home">
-//         <ul>
-//             {cart.map(item => {
-//                 console.log(item)
-//             return <li key={item.id}>
-//                 <p> producto: {item.title} unidades: {item.quantity} subtotal: ${item.quantity > 1 ?  item.price * item.quantity : item.price}</p> 
-//                 <button onClick={() =>removeItem(item.id)} className="btn btn-danger">-</button>
-//                 <br/>
-//             </li>
-//             })}
-//         <br/>
-//         <p>Precio total:{1} </p>
-//         <button onClick={showcart} className="btn btn-success">Comprar</button>
-//         <br/><br/>
-//         <button  onClick={clear} className="btn btn-danger">Eliminar todos los productos</button>
-//         </ul>
-//         </div>
-//   )   
+  function increaseQuantity(){
+      const newItem = {
+          id: itemSale.id,
+          category: itemSale.category,
+          title: itemSale.title,
+          price: itemSale.price,
+          quantity: itemSale.quantity +1
+      };
+      console.log(newItem);
+      updateToCart(newItem);
+  }
+
+  function reduceQuantity(){
+      const newItem = {
+          id: itemSale.id,
+          category: itemSale.category,
+          title: itemSale.title,
+          price: itemSale.price,
+          quantity: itemSale.quantity -1
+      };
+      console.log(newItem);
+      updateToCart(newItem);
+  }
+
+  return (
+      <tr>
+          <th>{itemSale.category}</th>
+          <td>{itemSale.title}</td>
+          <td>
+              {
+                  itemSale.quantity < 5 ? <button onClick={increaseQuantity} className="btn btn-info btn-sm action-button">+</button> : <button className="btn btn-info btn-sm action-button" disabled>+</button>
+              }
+              <span className="cart-visual">{itemSale.quantity}</span>
+              {
+                  itemSale.quantity > 1 ? <button onClick={reduceQuantity} className="btn btn-danger btn-sm action-button">-</button> : <button className="btn btn-danger btn-sm action-button" disabled>-</button>
+              }
+          </td>
+          <td>
+              <button onClick={() => handleRemove(itemSale.id)} className="btn btn-warning btn-sm action-button">
+                  Borrar
+              </button>
+          </td>
+          <td>$ <span>{(itemSale.price*itemSale.quantity).toFixed(2)}</span></td>
+      </tr>
+  );
+}

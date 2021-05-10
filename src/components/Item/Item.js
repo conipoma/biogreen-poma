@@ -19,6 +19,7 @@ export default function ItemCard({title, image, id, description, price, category
         <ListGroup flush>
           <ListGroup.Item>{price}</ListGroup.Item>
           <ListGroup.Item>{category}</ListGroup.Item>
+          <ListGroup.Item></ListGroup.Item>
         </ListGroup>
         <Card.Body>
           <Button onClick={() => history.push(`/item/${id}`)} variant="primary">Ver producto</Button>

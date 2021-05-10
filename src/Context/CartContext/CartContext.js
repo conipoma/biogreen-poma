@@ -1,86 +1,88 @@
-import React, { useState } from 'react';
-import { createContext } from 'react';
+import {createContext, useState, useEffect } from 'react';
 
-export const CartContext = createContext([])
- 
-export default function CartProvider () { 
+export const CartContext = createContext([]);
 
-    const [cart, setCart] = useState([])
- 
+export default function AppContextProvider({children}){
+    const [cart, setCart] = useState([]);
+
+    const [totalPrice, setTotalPrice] = useState(0);
+	const [totalItems, setTotalItems] = useState(0);
+
     function isInCart (id) {
-      return cart.some(item => item.id === id)
+        return cart.some(item => item.id === id)
     }
-  
-    function setCartItem({id, title, quantity}) {
-      const isCurrentInCart = isInCart(id)
-      if (isCurrentInCart) {
-        const newCart = cart.map(item => {
-          if (item.id === id) {
-            return {
-              ...item,
-              quantity: quantity + item.quantity
+
+    function addToCart({id, category, title, price, quantity}) {
+        const isCurrentInCart = isInCart(id)
+        if (isCurrentInCart) {
+            const newCart = cart.map(item => {
+                if (item.id === id) {
+                    return {
+                        ...item,
+                        quantity: quantity + item.quantity
+                    }
+                }
+                return item
+            })
+            return setCart([...newCart])
+        }
+        setCart([...cart, {id, category, title, price, quantity}])
+    }
+
+    function updateToCart({id, category, title, price, quantity}) {
+        const isCurrentInCart = isInCart(id)
+        if (isCurrentInCart) {
+            const newCart = cart.map(item => {
+                if (item.id === id) {
+                    return {
+                        ...item,
+                        quantity: quantity
+                    }
+                }
+                return item
+            })
+            return setCart([...newCart])
+        }
+        setCart([...cart, {id, category, title, price, quantity}])
+    }
+
+    function clearCart(){
+        setCart([]);
+    }
+
+    useEffect(() => {
+		const Total = () => {
+			let totalPrice = 0;
+			let totalItems = 0;
+			for (const Item of cart) {
+				totalPrice = totalPrice + Item.price * Item.quantity;
+				totalItems += Item.quantity;
+			}
+			setTotalItems(totalItems);
+			setTotalPrice(totalPrice.toFixed(2));
+		};
+		Total();
+	}, [cart]);
+
+    function handleRemove(id) {
+        const newcart = cart.filter((item) => item.id !== id);
+        setCart(newcart);
+    }
+
+    return (
+        <CartContext.Provider value={
+            {
+                cart,
+                setCart,
+                addToCart,
+                clearCart,
+                updateToCart,
+                handleRemove,
+                totalPrice, 
+                totalItems,
             }
-          }
-        })
-        return setCart([...newCart])
-      }
-      setCart([...cart, {id, title, quantity}])
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }>
+            {children}
+        </CartContext.Provider>
+    )
 }
-//     const [cart, setCart] = useState([])
- 
-//     function isInCart (id) {
-//         return cart.some(itemData => itemData.id === id)
-//     }
-
-//     function setCartItem({id, title, quantity, price}) {
-//         const isCurrentInCart = isInCart(id)
-//         if (isCurrentInCart) {
-//         const newCart = cart.map(itemData => {
-//             if (itemData.id === id) {
-//             return {
-//                 ...itemData,
-//                 quantity: quantity + itemData.quantity,
-//                 price: price
-//             }
-//         }
-//             // return items
-//         })
-//         return setCart([...newCart])
-//         }
-//         setCart([...cart, {id, title, quantity, price}])
-//     }
-
-//     function clear(){
-//         console.log('borrado cart')
-//         setCart([])
-//     }
-//     function removeItem(id) {
-//         const newCart = cart.filter((items) => items.id !== id);
-//         setCart(newCart);
-//         console.log(`eliminar item id ${id}`)
-//     }
-
-//     return <CartContext.Provider value={{setCartItem, setCart, clear, removeItem, cart}} />
-// }

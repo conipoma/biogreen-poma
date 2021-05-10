@@ -1,12 +1,12 @@
 import React from 'react';
-import AppRouter from './container/AppRouter/AppRouter';
 import './App.css';
+import AppRouter from './container/AppRouter/AppRouter';
+import AppContextProvider from './Context/CartContext/CartContext';
 
-
-function App() {
+export default function App () {
   return (
-    <AppRouter />
-  );
+    <AppContextProvider>
+      <AppRouter />
+    </AppContextProvider>
+  )
 }
-
-export default App;
