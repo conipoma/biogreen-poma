@@ -1,22 +1,21 @@
 import React, {useContext} from "react";
 import Cart from "../Cart/Cart";
 import { CartContext } from '../../Context/CartContext/CartContext';
+import { Button } from 'bootstrap-4-react';
+
+import './CartList.css'
+
 
 export default function CartList() {
+
     const { cart, clearCart, totalPrice } = useContext(CartContext);
     console.log("Cart List");
-    //console.log(cart) //para test
-
-    //const cartOrder = ["alfajor", "cookie", "muffin", "pasta-frola", "porty-box", "scon"]
-    //const sortedCart = Object.keys(cart).map(key => cart[key]);
-    //sortedCart.sort((a, b) => cartOrder.indexOf(a.categoria) - cartOrder.indexOf(b.categoria));
-    //console.log(sortedCart); //para test
 
     return (
         <div>
             <table className="table">
                 <thead>
-                    <tr>
+                    <tr className="cart-table">
                         <th scope="col">Categoría</th>
                         <th scope="col">Item</th>
                         <th scope="col">Cantidad</th>
@@ -32,18 +31,18 @@ export default function CartList() {
                 <tfoot>
                     { cart.length === 0 ? 
                         <tr id="footer-carrito">
-                            <th className="empty-cart" scope="row" colSpan="5">Carrito vacío - comience a comprar!</th>
+                            <th className="empty-cart" scope="row" colSpan="5">Tu carrito esta vacío, comienza a comprar!</th>
                         </tr>
                         :
                         <tr id="footer-carrito">
                             <td></td>
                             <td></td>
                             <td>
-                                <button className="btn btn-danger btn-sm" id="vaciar-carrito" onClick={clearCart}>
+                                <Button type="button" id="vaciar-carrito" onClick={clearCart}>
                                     Vaciar Carrito
-                                </button>
+                                </Button>
                             </td>
-                            <td className="font-weight-bold">Total a abonar</td>
+                            <td className="font-weight-bold">Total a pagar</td>
                             <td className="font-weight-bold">$ <span>{totalPrice}</span></td>
                         </tr>
                     }

@@ -1,5 +1,8 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../../Context/CartContext/CartContext';
+import { Button } from 'bootstrap-4-react';
+
+
 
 export default function CartPage({ itemSale }) {
     
@@ -40,17 +43,17 @@ export default function CartPage({ itemSale }) {
           <td>{itemSale.title}</td>
           <td>
               {
-                  itemSale.quantity < 5 ? <button onClick={increaseQuantity} className="btn btn-info btn-sm action-button">+</button> : <button className="btn btn-info btn-sm action-button" disabled>+</button>
+                  itemSale.quantity < 5 ? <Button type="button" onClick={increaseQuantity}>+</Button> : <Button type="button" disabled>+</Button>
               }
               <span className="cart-visual">{itemSale.quantity}</span>
               {
-                  itemSale.quantity > 1 ? <button onClick={reduceQuantity} className="btn btn-danger btn-sm action-button">-</button> : <button className="btn btn-danger btn-sm action-button" disabled>-</button>
+                  itemSale.quantity > 1 ? <Button type="button" onClick={reduceQuantity}>-</Button> : <Button disabled>-</Button>
               }
           </td>
           <td>
-              <button onClick={() => handleRemove(itemSale.id)} className="btn btn-warning btn-sm action-button">
+              <Button type="button" onClick={() => handleRemove(itemSale.id)}>
                   Borrar
-              </button>
+              </Button>
           </td>
           <td>$ <span>{(itemSale.price*itemSale.quantity).toFixed(2)}</span></td>
       </tr>

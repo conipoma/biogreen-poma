@@ -38,7 +38,6 @@ export default function ItemCountContainer ({item, setQuantityProductAdded, setF
         addToCart(newItem);
       }
 
-      // Función que suma +1 en el botón
       function increment() {
           if (stock > product) {
             setProduct(product + 1);
@@ -47,7 +46,6 @@ export default function ItemCountContainer ({item, setQuantityProductAdded, setF
           }
       }
 
-      // Función que suma -1 en el botón
       function decrement() {
         if (product > 1) {
             setProduct(product - 1);
@@ -65,4 +63,4 @@ export default function ItemCountContainer ({item, setQuantityProductAdded, setF
           itemAdd={setItemAdd}
         />
       );
-    }
+}

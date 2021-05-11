@@ -3,7 +3,6 @@ import { Card, ListGroup } from 'bootstrap-4-react';
 import './Item.css';
 import { Button } from 'bootstrap-4-react/lib/components';
 import { useHistory } from 'react-router-dom'
-import ItemCountContainer from '../../container/ItemCountContainer/ItemCountContainer';
  
 export default function ItemCard({title, image, id, description, price, category}){
 
@@ -23,7 +22,6 @@ export default function ItemCard({title, image, id, description, price, category
         </ListGroup>
         <Card.Body>
           <Button onClick={() => history.push(`/item/${id}`)} variant="primary">Ver producto</Button>
-        
         </Card.Body>
       </Card>
     )

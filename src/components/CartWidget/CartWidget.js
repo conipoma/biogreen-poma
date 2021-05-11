@@ -1,9 +1,8 @@
 import React, {useContext} from "react";
 import CartWidget from './Icon/cartWidget.svg'
-import { useHistory } from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext/CartContext';
 import {Link} from 'react-router-dom';
-
+import './CartWidget.css';
 
 export default function MostrarCartWidget(){
     const { cart, totalItems } = useContext(CartContext);
@@ -17,7 +16,7 @@ export default function MostrarCartWidget(){
                 :
                 <Link to={`/cart`}>
                     <img src={CartWidget} className="cart-icon" width="40" height="40" alt="Cart" loading="lazy"/>
-                    { totalItems ? <span className='total-items'>{totalItems}</span> : null}
+                    { totalItems ? <span className="total-item">{totalItems}</span> : null}
                 </Link>
             }
         </div>

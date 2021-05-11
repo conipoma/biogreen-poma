@@ -1,4 +1,3 @@
-// import data from './data'
 import products from './data'
 
 function getProductsId (id) {
@@ -17,29 +16,6 @@ function getProductsId (id) {
 }
 
 export default getProductsId 
-
-
-
-
-// function getProductsId (id){
-//     return new Promise((resolve, reject) => {
-//         fetch('https://raw.githubusercontent.com/conipoma/biogreen-poma/main/src/components/Item/Item.json')
-//         .then(response => response.json())
-//         .then(data => resolve(data))
-//         .catch(err=>reject(err))
-//         setTimeout(() => {
-//             const findProduct= data.filter((product) => {
-//                 return id.id === id
-//                 })
-//             resolve(findProduct)
-            
-//         }, 2000);
-            
-                
-       
-//     }, []);
-
-// }
 
 
 

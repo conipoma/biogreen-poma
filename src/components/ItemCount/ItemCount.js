@@ -23,4 +23,4 @@ export default function ItemCount({increment, decrement, number, itemQuantity, o
         </div>
     )
 
-  }
+}

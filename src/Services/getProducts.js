@@ -12,7 +12,7 @@ function getProducts (){
 export default getProducts 
 
 
-
+// FUNCION QUE DEBO CONSULTAR A MATI
     // const getProducts = new Promise ((resolve, reject) => {
     //     fetch('https://raw.githubusercontent.com/conipoma/biogreen-poma/main/src/components/Item/Item.json')
     //     .then(response => response.json())

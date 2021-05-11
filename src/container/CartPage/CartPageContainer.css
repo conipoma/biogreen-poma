@@ -1,12 +1,13 @@
-.header-cart{
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
+
+.cart-header{
     padding: 1rem 0 .5rem 0;
     text-align: center;
-    background-color: rgb(201, 105, 105);
+    background-color: rgba(149, 113, 233, 0.618);
+    font-family: 'Abhaya Libre', serif;
     margin: 0;
-    font-family: 'Aguafina Script', cursive;
-    font-size: 3rem;
-    color: darkslategrey;
-    text-shadow: 2px 2px 5px white;
+    font-size: 2.5rem;
+    color: rgb(248, 250, 250);
 }
 
 .empty-cart{
@@ -31,6 +32,11 @@
 
 .return-button{
     margin: 1rem;
-    background-color: rgb(201, 105, 105);
-    border: rgb(201, 105, 105);
+    background-color: rgb(242, 174, 230);
+    border: rgb(242, 174, 230);
+}
+
+.continue-buy {
+    display: flex;
+    justify-content: center;
 }
