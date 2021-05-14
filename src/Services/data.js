@@ -4,7 +4,7 @@ export const products = [
         "category": "Aromatizantes",
         "title": "AROMATIZANTE DE AMBIENTE SÁNDALO",
         "description": "Árbol místico y sagrado, proveniente de la India, se utiliza desde hace milenios para alcanzar la paz y la armonía espiritual. Su perfumada madera nos equilibra y nos conecta con nuestra más pura esencia.",
-        "image": "https://biogreenchile.com/wp-content/uploads/2020/05/AROMATIZANTE-DE-AMBIENTE-S%C3%81NDALO-A00103.jpg",
+        "image": "https://biogreen.com.ar/wp-content/uploads/2020/06/sandalor_arom.jpg",
         "price": 10690
     }, 
     {
@@ -81,6 +81,22 @@ export const products = [
     },
     {
         "id": 11,
+        "category": "Aceites",
+        "title": "AROMATIZANTES PARA HORNILLO SENSUALIDAD",
+        "description": "Un acorde audaz y seductor de Jazmín & Vainilla que convierte los ambientes en espacios de placer.",
+        "image": "https://biogreencatalogo.com.ar/wp-content/uploads/esencias-aromaticas-sensualidad.jpg",
+        "price": 4990
+    },
+    {
+        "id": 12,
+        "category": "Aceites",
+        "title": "AROMATIZANTES PARA HORNILLO SERENIDAD",
+        "description": "Un encantador y adorable blend de Tilo & Miel que aporta calidez a tus espacios mientras te invita a disfrutar en calma de las cosas maravillosas que tiene la vida.",
+        "image": "https://biogreencatalogo.com.ar/wp-content/uploads/esencias-aromaticas-serenidad.jpg",
+        "price": 4990
+    },
+    {
+        "id": 13,
         "category": "Difusores",
         "title": "DIFUSOR JENGIBRE, LIMÓN Y ROSAS",
         "description": "Una combinación de frescura y elegancia que acerca disfrute a tu vida y una vibrante alegría a tus ambientes.",
@@ -88,7 +104,7 @@ export const products = [
         "price": 16590
     },
     {
-        "id": 12,
+        "id": 14,
         "category": "Difusores",
         "title": "DIFUSOR PEONIA Y VIOLETAS",
         "description": "El aroma de la voluptuosa peonia y la fragante violeta para un clima de elegancia en tus espacios.",
@@ -96,7 +112,7 @@ export const products = [
         "price": 16590
     },
     {
-        "id": 13,
+        "id": 15,
         "category": "Difusores",
         "title": "DIFUSOR TÉ VERDE Y CEDRÓN",
         "description": "Un ligero soplo cítrico entre frescas hojas verdes en un aroma ideal para llevar armonía a tus espacios.",
@@ -104,7 +120,7 @@ export const products = [
         "price": 16590
     },
     {
-        "id": 14,
+        "id": 16,
         "category": "Difusores",
         "title": "DIFUSOR VAINILLA Y CARAMELO",
         "description": "Una invitación a dulzura de estas deliciosas notas para llevar una cálida energía a tus ambientes.",
@@ -112,7 +128,7 @@ export const products = [
         "price": 16590
     },
     {
-        "id": 15,
+        "id": 17,
         "category": "Difusores",
         "title": "DIFUSOR LINO",
         "description": "Desde la época de los faraones, el lino ha atravesado distintas culturas y continentes.Esta encantadora fragancia entrelaza alegres flores blancas con las más preciosas maderas.",
@@ -120,7 +136,7 @@ export const products = [
         "price": 16590
     },
     {
-        "id": 16,
+        "id": 18,
         "category": "Limpieza",
         "title": "LÍQUIDO LAVAVAJILLA LIMÓN",
         "description": "Su exclusiva fórmula concentrada provee un gran poder desengrasante incluso en altas diluciones. Con una fina espuma, cuida y protege la piel de las manos.",
@@ -128,7 +144,7 @@ export const products = [
         "price": 9990
     },
     {
-        "id": 17,
+        "id": 19,
         "category": "Limpieza",
         "title": "LIMPIADOR MULTIUSO",
         "description": "Ideal para la limpieza integral de la cocina, azulejos, mesadas, pisos, etc. por su gran poder desengrasante. Útil también para pre-tratar y remover manchas difíciles de la ropa.",
@@ -136,7 +152,7 @@ export const products = [
         "price": 9990
     },
     {
-        "id": 18,
+        "id": 20,
         "category": "Limpieza",
         "title": "LÍQUIDO PARA LAVADO DE ROPA",
         "description": "Su exclusiva fórmula biodegradable provee una limpieza superior, dejando los blancos más blancos y cuidando las fibras. Elimina las manchas de todos los días y deja un agradable aroma.Altamente concentrado, con apenas 30 ml de producto se puede realizar una carga completa de lavado. Deja la ropa suave y perfumada.",
@@ -144,7 +160,7 @@ export const products = [
         "price": 11990
     },
     {
-        "id": 19,
+        "id": 21,
         "category": "Limpieza",
         "title": "LIMPIADOR PARA AUTOMÓVIL",
         "description": "Elaborado con cera carnauba natural, limpia rápidamente la suciedad adherida sin dañar la pintura. Deja la chapa brillante y protegida, como nueva. Útil también para la limpieza de pisos flotantes.",
@@ -152,7 +168,7 @@ export const products = [
         "price": 9990
     },
     {
-        "id": 20,
+        "id": 22,
         "category": "Limpieza",
         "title": "LIMPIADOR PARA VIDRIOS, ALFOMBRAS Y TAPIZADOS",
         "description": "Efectivo en superficies vidriadas, a las que deja impecables. Ideal para alfombras y tapizados, en todo tipo de tejidos, a los que cuida, manteniendo los colores y texturas. Ideal para la limpieza de las ventanas y parabrisas del automóvil y para colocar en el sapito.",
@@ -160,7 +176,7 @@ export const products = [
         "price": 8990
     },
     {
-        "id": 21,
+        "id": 23,
         "category": "Bebé",
         "title": "AROMATIZANTE TEXTIL Y DE AMBIENTES",
         "description": "Una fragancia delicada que perfuma suavemente las prendas y espacios del bebé. Elaborada con las más nobles esencias, no mancha ni daña las telas.",
@@ -168,7 +184,7 @@ export const products = [
         "price": 6500
     },
     {
-        "id": 22,
+        "id": 24,
         "category": "Bebé",
         "title": "DIFUSOR AROMAS",
         "description": "Una fragancia delicadamente floral que perfuma amorosamente los espacios del bebé acercando paz a su vida.",
@@ -176,13 +192,117 @@ export const products = [
         "price": 13990
     },
     {
-        "id": 23,
+        "id": 25,
         "category": "Bebé",
         "title": "PIEDRAS AROMÁTICAS",
         "description": "Delicadas esferas aromáticas que perfuman suavemente las prendas y espacios del bebé. Elaboradas con amor y dedicación por los hábiles artesanos de la comunidad QOM.",
         "image": "https://biogreen.com.ar/wp-content/uploads/2020/07/piedras_bebe.jpg",
         "price": 6990
-    }
+    },
+    {
+        "id": 26,
+        "category": "Aromatizantes",
+        "title": "AROMATIZANTE ESENCIAL JENGIBRE, LIMÓN Y ROSAS",
+        "description": "Un blend que combina frescura y elegancia para acercar disfrute a tu vida.",
+        "image": "https://biogreen.com.ar/wp-content/uploads/2020/06/jengibre.jpg",
+        "price": 10890
+    },
+    {
+        "id": 27,
+        "category": "Aromatizantes",
+        "title": "AROMATIZANTE ESENCIAL TÉ VERDE Y CEDRÓN",
+        "description": "Un ligero soplo cítrico entre hojas verdes en una asociación muy fresca.",
+        "image": "https://biogreen.com.ar/wp-content/uploads/2020/06/teverde.jpg",
+        "price": 10890
+    },
+    {
+        "id": 28,
+        "category": "Aromatizantes",
+        "title": "AROMATIZANTE ESENCIAL PAPAYA Y FRAMBUESA",
+        "description": "Una combinación fresca, dulce y jugosa ideal para brindar alegría.",
+        "image": "https://biogreen.com.ar/wp-content/uploads/2020/06/papaya.jpg",
+        "price": 10890
+    },
+    {
+        "id": 29,
+        "category": "Aromatizantes",
+        "title": "AROMATIZANTE ESENCIAL VAINILLA Y CARAMELO",
+        "description": "Una invitación al placer y la dulzura que traen estas deliciosas notas.",
+        "image": "https://biogreen.com.ar/wp-content/uploads/2020/06/vainilla.jpg",
+        "price": 10890
+    },
+    {
+        "id": 30,
+        "category": "Aromatizantes",
+        "title": "AROMATIZANTE ESENCIAL CAPULLOS DE LINO",
+        "description": "Una delicada propuesta ideal para la ropa de toda la familia.",
+        "image": "https://biogreen.com.ar/wp-content/uploads/2020/06/capullos.jpg",
+        "price": 10890
+    },
+    {
+        "id": 31,
+        "category": "Aromatizantes",
+        "title": "AROMATIZANTE ESENCIAL LAVANDA",
+        "description": "La versión más pura de este clásico universal de las aromáticas.",
+        "image": "https://biogreenchile.com/wp-content/uploads/2020/05/LAVANDA-1.jpg",
+        "price": 10890
+    },
+    {
+        "id": 32,
+        "category": "Aromatizantes",
+        "title": "AROMATIZANTE ESENCIAL ORQUÍDEA Y BAMBÚ",
+        "description": "Un elegante bouquet floral pleno de femineidad y sofisticación.",
+        "image": "https://biogreenchile.com/wp-content/uploads/2020/05/ORQUIDEA-BAMBU.jpg",
+        "price": 10890
+    },
+    {
+        "id": 33,
+        "category": "Aromatizantes",
+        "title": "AROMATIZANTE ESENCIAL COCO Y AVELLANAS",
+        "description": "Una exquisita propuesta gourmand que combina intensidad y dulzura.",
+        "image": "https://biogreenchile.com/wp-content/uploads/2020/05/COCOYAVELLANAS.jpg",
+        "price": 10890
+    },
+    {
+        "id": 34,
+        "category": "Aromatizantes",
+        "title": "AROMATIZANTE ESENCIAL VERBENA Y PETITGRAN",
+        "description": "Un blend alegre y vibrante con notas intensamente verdes y cítricas.",
+        "image": "https://biogreenchile.com/wp-content/uploads/2020/05/VERBENA-PETITGRAIN.jpg",
+        "price": 10890
+    },
+    {
+        "id": 35,
+        "category": "Difusores",
+        "title": "DIFUSOR HAMSA FLOWERS",
+        "description": "Un halo que combina preciosas notas de sándalo, pachuli, rosa y neroli para envolver tus ambientes con buena suerte y amor.",
+        "image": "https://biogreen.com.ar/wp-content/uploads/2020/06/hamsaf_difu.jpg",
+        "price": 12990
+    },
+    {
+        "id": 36,
+        "category": "Difusores",
+        "title": "DIFUSOR HAMSA",
+        "description": "Un halo que combina preciosas notas de sándalo, pachuli, rosa y neroli para envolver tus ambientes con buena suerte y amor.",
+        "image": "https://biogreen.com.ar/wp-content/uploads/2020/06/hamsa_difu.jpg",
+        "price": 12990
+    },
+    {
+        "id": 37,
+        "category": "Difusores",
+        "title": "DIFUSOR LA PATISSERIE COOKIES",
+        "description": "Deliciosas galletitas azucaradas recién horneadas surgen cálidas y amorosas en esta original creación aromática para perfumar con dulzura tus ambientes.",
+        "image": "https://biogreencatalogo.com.ar/wp-content/uploads/la-patisserie-cookies.jpg",
+        "price": 13990
+    },
+    {
+        "id": 38,
+        "category": "Difusores",
+        "title": "DIFUSOR LA PATISSERIE LEMON PIE",
+        "description": "Una crujiente masa sablée, una suave crema de limón y una capa de delicioso merengue dan vida a esta divertida creación aromática para perfumar con alegría tus espacios.",
+        "image": "https://biogreencatalogo.com.ar/wp-content/uploads/la-patisserie-lemon-pie.jpg",
+        "price": 13990
+    },
 ]
 
 export default products 
