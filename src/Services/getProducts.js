@@ -1,15 +1,50 @@
-import data from './data'
-// import { products } from './data'
+import db from '../Firebase';
+// import data from './data'
 
-function getProducts (){
-    return new Promise((resolve) => {
-        setTimeout(() => {
-           resolve(data) 
-        }, 2000);
+
+const productsCollection = db.collection('productos')
+
+export async function getProducts(){
+    const docRef = await productsCollection.get();
+
+    const productos = docRef.docs.map(doc => {
+        return { id: doc.id, ...doc.data()}
     })
+    return productos;
 }
 
 export default getProducts 
+
+// function getProducts(){
+//     const productsCollection = db.collection('productos')
+//     let productos = []
+    
+//     productsCollection
+//         .get()
+//         .then(snapshot => {
+//             productos = snapshot.docs.map(doc => {
+//                 console.log(doc.data)
+//                 let product = doc.data()
+//                 return  {
+//                    category: doc.category, 
+//                     ...product
+//                } 
+//             })
+//         })
+//     return productos
+
+
+// }
+// export default getProducts
+// function getProducts (){
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//            resolve(data) 
+//         }, 2000);
+//     })
+// }
+
+// export default getProducts 
 
 
 // FUNCION QUE DEBO CONSULTAR A MATI

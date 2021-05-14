@@ -1,21 +1,36 @@
-import products from './data'
+import db from '../Firebase';
 
-function getProductsId (id) {
-    console.log("esto me trae data")
-    console.log(typeof(products))
-    console.log(products)
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            const findProduct= products.find((product) => {
-                return product.id === Number(id)
-            })
-            console.log(findProduct)
-            resolve(findProduct)
-        }, 2000);
+const productsCollection = db.collection('productos')
+
+export async function getProductsId(id){
+    const itemById = productsCollection.where("id", "==", parseInt(id));
+    return itemById.get()
+    .then(snapshot => {
+        return snapshot.docs.map(doc => doc.data())
     })
 }
 
 export default getProductsId 
+
+
+// import products from './data'
+
+// function getProductsId (id) {
+//     console.log("esto me trae data")
+//     console.log(typeof(products))
+//     console.log(products)
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             const findProduct= products.find((product) => {
+//                 return product.id === Number(id)
+//             })
+//             console.log(findProduct)
+//             resolve(findProduct)
+//         }, 2000);
+//     })
+// }
+
+// export default getProductsId 
 
 
 

@@ -3,7 +3,6 @@ import { CartContext } from '../../Context/CartContext/CartContext';
 import { Button } from 'bootstrap-4-react';
 
 
-
 export default function CartPage({ itemSale }) {
     
   const { updateToCart, handleRemove } = useContext(CartContext);
