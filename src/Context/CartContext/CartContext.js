@@ -68,7 +68,7 @@ export default function AppContextProvider({children}){
         const newcart = cart.filter((item) => item.id !== id);
         setCart(newcart);
     }
-
+    console.log(cart)
     return (
         <CartContext.Provider value={
             {

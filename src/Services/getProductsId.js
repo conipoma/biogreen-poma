@@ -2,13 +2,23 @@ import db from '../Firebase';
 
 const productsCollection = db.collection('productos')
 
-export async function getProductsId(id){
-    const itemById = productsCollection.where("id", "==", parseInt(id));
-    return itemById.get()
-    .then(snapshot => {
-        return snapshot.docs.map(doc => doc.data())
+export async function getProductsId(id) {
+    
+    const itemRef = await productsCollection.get();
+    const [productFinded] = itemRef.docs.filter(product=> product.id === id).map((product)=> {
+        return { id: product.id, ...product.data() }
     })
-}
+    return productFinded;     
+} 
+
+
+// export async function getProductsId(id){
+//     const itemById = productsCollection.where("id", "==", parseInt(id));
+//     return itemById.get()
+//     .then(snapshot => {
+//         return snapshot.docs.map(doc => doc.data())
+//     })
+// }
 
 export default getProductsId 
 
