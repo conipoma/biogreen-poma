@@ -11,6 +11,10 @@ export default function CartList() {
     const { cart, clearCart, totalPrice } = useContext(CartContext);
     console.log("Cart List");
 
+    const cartOrder = ["Aromatizante", "Aceites", "Bebé", "Difusores", "Limpieza"]
+    const sortedCart = Object.keys(cart).map(key => cart[key]);
+    sortedCart.sort((a, b) => cartOrder.indexOf(a.category) - cartOrder.indexOf(b.category));
+
     return (
         <div>
             <table className="table">
@@ -24,7 +28,7 @@ export default function CartList() {
                     </tr>
                 </thead>
                 <tbody>
-                    {cart.map(item => (
+                    {sortedCart.map(item => (
                         <Cart key={item.id} itemSale={item} />
                     ))}
                 </tbody>

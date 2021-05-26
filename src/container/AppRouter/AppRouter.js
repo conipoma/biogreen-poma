@@ -9,6 +9,7 @@ import ContactoPageContainer from '../../Pages/ContactoPageContainer';
 import NosotrosPageContainer from '../../Pages/NosotrosPageContainer';
 import Footer from '../../components/Footer/Footer';
 import CartPageContainer from '../CartPage/CartPageContainer';
+import CheckoutPageContainer from '../../Pages/CheckoutPageContainer'
 
 
 export default function AppRouter() {
@@ -45,6 +46,9 @@ export default function AppRouter() {
           {/* Ruta de cart */}
           <Route path="/cart">
             <CartPageContainer />
+          </Route>
+          <Route path="/checkout">
+            {/* <CheckoutPageContainer/> */}
           </Route>
           </Switch>
         </Router>

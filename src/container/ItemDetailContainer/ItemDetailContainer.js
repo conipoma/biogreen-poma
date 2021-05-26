@@ -11,7 +11,7 @@ export default function ItemDetailContainer() {
     const [itemDetail, setItemDetail] = useState({
         title: '', 
         description: '', 
-        // image: '',
+        image: '',
         price: '', 
         category: ''
     })

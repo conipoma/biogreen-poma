@@ -18,9 +18,7 @@ export default function ItemDetail({item}) {
         }, []);
 
     let history = useHistory();
-    console.log("*****ItemCount*****")
-    console.log(item)
-    console.log("*****ItemCount*****")
+    
     return(
         <div className="itemDetail">
             <h2 className="item-title">Detalles del producto</h2>

@@ -20,7 +20,7 @@ export default function ItemListContainer(){
             console.log(category)
         })        
     
-},[category] );
+},[category]);
 
 
     return (

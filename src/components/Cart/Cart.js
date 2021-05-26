@@ -6,11 +6,7 @@ import { Button } from 'bootstrap-4-react';
 export default function CartPage({ itemSale }) {
     
   const { updateToCart, handleRemove } = useContext(CartContext);
-  console.log(itemSale); //para test
-
-  function capitalizarPrimeraLetra(str) {
-      return str.charAt(0).toUpperCase() + str.slice(1);
-  }
+  
   
   function increaseQuantity(){
       const newItem = {
@@ -20,7 +16,6 @@ export default function CartPage({ itemSale }) {
           price: itemSale.price,
           quantity: itemSale.quantity +1
       };
-      console.log(newItem);
       updateToCart(newItem);
   }
 
@@ -32,29 +27,28 @@ export default function CartPage({ itemSale }) {
           price: itemSale.price,
           quantity: itemSale.quantity -1
       };
-      console.log(newItem);
       updateToCart(newItem);
   }
 
   return (
       <tr>
-          <th>{itemSale.category}</th>
-          <td>{itemSale.title}</td>
-          <td>
-              {
-                  itemSale.quantity < 5 ? <Button type="button" onClick={increaseQuantity}>+</Button> : <Button type="button" disabled>+</Button>
-              }
-              <span className="cart-visual">{itemSale.quantity}</span>
-              {
-                  itemSale.quantity > 1 ? <Button type="button" onClick={reduceQuantity}>-</Button> : <Button disabled>-</Button>
-              }
-          </td>
-          <td>
-              <Button type="button" onClick={() => handleRemove(itemSale.id)}>
-                  Borrar
-              </Button>
-          </td>
-          <td>$ <span>{(itemSale.price*itemSale.quantity).toFixed(2)}</span></td>
+        <th>{itemSale.category}</th>
+        <td>{itemSale.title}</td>
+        <td>
+            {
+                itemSale.quantity < 5 ? <Button type="button" onClick={increaseQuantity}>+</Button> : <Button type="button" disabled>+</Button>
+            }
+            <span className="cart-visual">{itemSale.quantity}</span>
+            {
+                itemSale.quantity > 1 ? <Button type="button" onClick={reduceQuantity}>-</Button> : <Button disabled>-</Button>
+            }
+        </td>
+        <td>
+            <Button type="button" onClick={() => handleRemove(itemSale.id)}>
+                Borrar
+            </Button>
+        </td>
+        <td>$ <span>{(itemSale.price*itemSale.quantity).toFixed(2)}</span></td>
       </tr>
   );
 }

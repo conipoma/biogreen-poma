@@ -1,10 +1,11 @@
-import db from '../Firebase';
+import db from '../firebase';
 
 const productsCollection = db.collection('productos')
 
 export async function getProductsId(id) {
-    
+
     const itemRef = await productsCollection.get();
+    
     const [productFinded] = itemRef.docs.filter(product=> product.id === id).map((product)=> {
         return { id: product.id, ...product.data() }
     })
