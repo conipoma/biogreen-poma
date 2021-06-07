@@ -13,14 +13,6 @@ export async function getProductsId(id) {
 } 
 
 
-// export async function getProductsId(id){
-//     const itemById = productsCollection.where("id", "==", parseInt(id));
-//     return itemById.get()
-//     .then(snapshot => {
-//         return snapshot.docs.map(doc => doc.data())
-//     })
-// }
-
 export default getProductsId 
 
 

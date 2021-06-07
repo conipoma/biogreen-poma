@@ -1,11 +1,9 @@
 import React, {useState, useContext} from "react";
 import { CartContext } from '../../Context/CartContext/CartContext';
-// import check from '../../assets/images/checked128px.png';
 import {useHistory} from 'react-router-dom';
 import { Modal, Form } from 'bootstrap-4-react';
 import { Button } from 'bootstrap-4-react';
-import Swal from 'sweetalert2/dist/sweetalert2.js'
-import './userOrder.css'
+import './userOrder.css';
 
 const { createOrder } = require('../../Services/postService');
 
@@ -35,59 +33,51 @@ export default function OrderPageContainer() {
             history.push('/checkout')
     }
     
-    // function closeAndReset(){
-    //     clearCart();
-    //     history.push(`/`);
-    // }
-
-    
-
     return(
         <div>
-        {/* Modal */}
-        {/* Button trigger Modal */}
-        <Button className="cart-button" primary data-toggle="modal" data-target="#exampleModal">Comprar</Button>
-                
-        <Modal id="exampleModal" >
-          <Modal.Dialog centered>
-            <Modal.Content>
-                <Modal.Header>
-                    <Modal.Title>Ingrese sus datos para poder comprar</Modal.Title>
-                    <Modal.Close>
-                        <span aria-hidden="true">&times;</span>
-                    </Modal.Close>
-                </Modal.Header>
-                <Modal.Body>
-                { finishBuy ? 
-                    <Form >
-                        <Form.Group>
-                            <label htmlFor="user-name">Nombre y apellido</label>
-                            <Form.Input type="text" id="user-name" onChange={evt => setName(evt.target.value)} className="form-control mb-3" placeholder="Ingrese su nombre" required></Form.Input>
-                            <Form.Text text="muted"></Form.Text>
-                        </Form.Group>
+    { cart.lenght !== 0 &&
+        <>
+            <Modal id="exampleModal" >
+            <Modal.Dialog centered>
+                <Modal.Content>
+                    <Modal.Header>
+                        <Modal.Title>Ingrese sus datos para poder comprar</Modal.Title>
+                        <Modal.Close>
+                            <span aria-hidden="true">&times;</span>
+                        </Modal.Close>
+                    </Modal.Header>
+                    <Modal.Body>
+                    { finishBuy ? 
+                        <Form >
+                            <Form.Group>
+                                <label htmlFor="user-name">Nombre y apellido</label>
+                                <Form.Input type="text" id="user-name" onChange={evt => setName(evt.target.value)} className="form-control mb-3" placeholder="Ingrese su nombre" required></Form.Input>
+                                <Form.Text text="muted"></Form.Text>
+                            </Form.Group>
                         
-                        <Form.Group>
-                            <label htmlFor="exampleInputEmail1">Email</label>
-                            <Form.Input id="exampleInputEmail1"  onChange={evt => setEmail(evt.target.value)} className="form-control mb-3" type="text" placeholder="Ingrese su email" required></Form.Input>
-                            <Form.Text text="muted"></Form.Text>
-                        </Form.Group>
+                            <Form.Group>
+                                <label htmlFor="exampleInputEmail1">Email</label>
+                                <Form.Input id="exampleInputEmail1"  onChange={evt => setEmail(evt.target.value)} className="form-control mb-3" type="text" placeholder="Ingrese su email" required></Form.Input>
+                                <Form.Text text="muted"></Form.Text>
+                            </Form.Group>
 
-                        <Form.Group>
-                            <label htmlFor="phone-number">Teléfono</label>
-                            <Form.Input id="phone-number" onChange={evt => setPhone(evt.target.value)} className="form-control mb-3" type="number" placeholder="Ingrese su teléfono de contacto" required></Form.Input>
-                            <Form.Text text="muted" ></Form.Text>
-                        </Form.Group>
-                    
-                        <Button secondary data-dismiss="modal" disabled={!(name && email && phone)} onClick={placeOrder} type="submit" className="btn btn-primary mt-3 mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >Confirmar Pedido</Button>
-                    </Form> : <h1>Compra finalizada</h1>   
-                }
-                </Modal.Body>
-                <Modal.Footer>
-                    {/* <Button secondary data-dismiss="modal"  onClick={closeAndReset}>Cerrar</Button> */}
-                </Modal.Footer>
-            </Modal.Content>
-          </Modal.Dialog>
-        </Modal> 
-        </div>
+                            <Form.Group>
+                                <label htmlFor="phone-number">Teléfono</label>
+                                <Form.Input id="phone-number" onChange={evt => setPhone(evt.target.value)} className="form-control mb-3" type="number" placeholder="Ingrese su teléfono de contacto" required></Form.Input>
+                                <Form.Text text="muted" ></Form.Text>
+                            </Form.Group>
+                        
+                            <Button secondary data-dismiss="modal" disabled={!(name && email && phone)} onClick={placeOrder} type="submit" className="btn btn-primary mt-3 mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >Confirmar Pedido</Button>
+                        </Form> : <h1>Compra finalizada</h1>   
+                    }
+                    </Modal.Body>
+                    <Modal.Footer>
+                    </Modal.Footer>
+                </Modal.Content>
+            </Modal.Dialog>
+            </Modal> 
+        </>
+    }
+    </div>
     )
 }

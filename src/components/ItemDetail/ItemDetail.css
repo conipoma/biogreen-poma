@@ -10,13 +10,11 @@
 .infoProduct {
     font-size: 18px;
     display: flex;
-    /* align-items: baseline; */
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding-top: 2rem;
-    margin-bottom: 15rem;
-
+    margin-bottom: 2rem;
 }
 
 .productPageOne {
@@ -48,4 +46,11 @@
     color: #898d86;
     font-family: 'Abhaya Libre', serif;
     font-size: 1.5rem;
+}
+
+.finish-buy {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 3rem;
+    margin-bottom: 15rem;
 }

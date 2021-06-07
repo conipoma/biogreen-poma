@@ -16,27 +16,19 @@ export default function CartList() {
     sortedCart.sort((a, b) => cartOrder.indexOf(a.category) - cartOrder.indexOf(b.category));
 
     return (
-        <div className="container-fluid">
+
+        <div className="container-lg">
             <React.Fragment>
-                <div className="table-cart">
-                <BSpan align="baseline">Categoría</BSpan>{' '}
-                <BSpan align="baseline">Item</BSpan>{' '}
-                <BSpan align="baseline">Cantidad</BSpan>{' '}
-                <BSpan align="baseline">Eliminar</BSpan>{' '}
-                <BSpan align="baseline">Total</BSpan>{' '}
+                <div className="container-lg table-cart">
+                <BSpan className="options" align="baseline">Categoría</BSpan>{' '}
+                <BSpan className="options" align="baseline">Item</BSpan>{' '}
+                <BSpan className="options" align="baseline">Cantidad</BSpan>{' '}
+                <BSpan className="options" align="baseline">Eliminar</BSpan>{' '}
+                <BSpan className="options" align="baseline">Total</BSpan>{' '}
                 </div>
             </React.Fragment>
 
             <table className="table">
-                {/* <thead>
-                    <tr className="cart-table">
-                        <th scope="col">Categoría</th>
-                        <th scope="col">Item</th>
-                        <th scope="col">Cantidad</th>
-                        <th scope="col">Eliminar</th>
-                        <th scope="col">Total</th>
-                    </tr>
-                </thead> */}
                 <tbody>
                     {sortedCart.map(item => (
                         <Cart key={item.id} itemSale={item} />
@@ -44,7 +36,7 @@ export default function CartList() {
                 </tbody>
                 <tfoot>
                     { cart.length === 0 ? 
-                        <tr id="footer-carrito">
+                        <tr id="fter-cart">
                             <th className="empty-cart" scope="row" colSpan="5">Tu carrito esta vacío, comienza a comprar!</th>
                         </tr>
                         :
@@ -52,7 +44,7 @@ export default function CartList() {
                             <td></td>
                             <td></td>
                             <td>
-                                <Button type="button" id="vaciar-carrito" onClick={clearCart}>
+                                <Button type="button" className="clear-carrito" id="vaciar-carrito" onClick={clearCart}>
                                     Vaciar Carrito
                                 </Button>
                             </td>

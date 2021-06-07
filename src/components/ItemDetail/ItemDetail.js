@@ -39,15 +39,15 @@ export default function ItemDetail({item}) {
             setQuantityProductAdded={setQuantityProductAdded}
             setFinishBuy={setFinishBuy}
         />
-
+        <div className="finish-buy">
         {finishBuy ? (
                 <ButtonGroup size="lg" className="mb-2">
-                <Button onClick={() => history.push("/cart")}>
+                <Button className="finish-buy" onClick={() => history.push("/cart")}>
                     Finalizar compra
                 </Button>
                 </ButtonGroup>
             ) : null} 
-    
+         </div>
     </div>
     );
 }
