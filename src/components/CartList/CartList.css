@@ -4,3 +4,9 @@
     color: #A3AC9B;
     font-size: 16px;
 }
+
+.table-cart {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2rem;
+}

@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import Cart from "../Cart/Cart";
 import { CartContext } from '../../Context/CartContext/CartContext';
-import { Button } from 'bootstrap-4-react';
+import { Button, BSpan } from 'bootstrap-4-react';
 
 import './CartList.css'
 
@@ -16,9 +16,19 @@ export default function CartList() {
     sortedCart.sort((a, b) => cartOrder.indexOf(a.category) - cartOrder.indexOf(b.category));
 
     return (
-        <div>
+        <div className="container-fluid">
+            <React.Fragment>
+                <div className="table-cart">
+                <BSpan align="baseline">Categoría</BSpan>{' '}
+                <BSpan align="baseline">Item</BSpan>{' '}
+                <BSpan align="baseline">Cantidad</BSpan>{' '}
+                <BSpan align="baseline">Eliminar</BSpan>{' '}
+                <BSpan align="baseline">Total</BSpan>{' '}
+                </div>
+            </React.Fragment>
+
             <table className="table">
-                <thead>
+                {/* <thead>
                     <tr className="cart-table">
                         <th scope="col">Categoría</th>
                         <th scope="col">Item</th>
@@ -26,7 +36,7 @@ export default function CartList() {
                         <th scope="col">Eliminar</th>
                         <th scope="col">Total</th>
                     </tr>
-                </thead>
+                </thead> */}
                 <tbody>
                     {sortedCart.map(item => (
                         <Cart key={item.id} itemSale={item} />

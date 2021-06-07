@@ -3,22 +3,15 @@ import ItemCount from '../../components/ItemCount/ItemCount';
 import { CartContext } from '../../Context/CartContext/CartContext';
 
 export default function ItemCountContainer ({item, setQuantityProductAdded, setFinishBuy}) {
-  const { addToCart } = useContext(CartContext);
-	
+    const { addToCart } = useContext(CartContext);
     const [product, setProduct] = useState(0);
-  //Cantidad de item que pusiste en el contador
-
     const [stock, setStock] = useState(5);
-    // Ese useState de arriba debería hacer un llamado a la base de datos para saber la cantidad de stock que hay. Pero en la consigna nos piden que solo que tenga 5.
-
     const [itemAdd, setItemAdd] = useState(false);
-    // Seteamos el item y su cantidad
 
     useEffect( ()=> {
         console.log('Se actualizó el componente de la botonera')
       }, [product])
 
-      // Función onADD que lo que setea es los items y los pasa a ItemDetail
       function onAdd() {
         console.log(`Se ejecutó función onAdd`);
         console.log("setQuantityProductAdded: " + setQuantityProductAdded);

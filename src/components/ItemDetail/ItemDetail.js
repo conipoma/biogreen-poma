@@ -9,9 +9,7 @@ import { ButtonGroup, Button } from 'bootstrap-4-react';
 export default function ItemDetail({item}) {
 
     const [quantityProductsAdded, setQuantityProductAdded] = useState([]); 
-
     const [finishBuy, setFinishBuy] = useState(false);
-
 
     useEffect(() => {
         setQuantityProductAdded(quantityProductsAdded);
@@ -28,11 +26,10 @@ export default function ItemDetail({item}) {
                     <img className="imgItemDetail" src= {item.image} alt={item.title}></img>            
                 </div>
                 <ul className="productPageTwo">
-                    
-                    <li>{item.title}</li>
-                    <li>Categoría: {item.category}</li>
-                    <li>Descripción: {item.description}</li>
-                    <li>Precio: ${item.price}</li>
+                    <li className="product-name">{ item.title }</li>
+                    <li>Categoría: { item.category }</li>
+                    <li>{ item.description }</li>
+                    <li>Precio: ${ item.price }</li>
                 </ul>
             </div>
         

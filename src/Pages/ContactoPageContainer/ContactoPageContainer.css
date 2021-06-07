@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
+
+.contact-form {
+    width: 70%;
+    padding: 2rem;
+    padding-bottom: 15rem;
+    background-color: rgba(206, 188, 248, 0.751);
+    margin-top: 3rem;
+    font-family: 'Abhaya Libre', serif;
+}
+
+.form-control {
+    font-size: 12px;
+}

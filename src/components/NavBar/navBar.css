@@ -2,7 +2,7 @@
 
 .bg-light {
     background-color: #A3AC9B!important;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .navbar-light .navbar-brand {
@@ -10,13 +10,24 @@
     font-family: 'Abhaya Libre', serif;
     font-size: 40px;
     text-align: left;
-
 }
 
 .nav-link {
-    padding-left: 6rem !important;
+    padding-left: 5rem !important;
     position: sticky;
+}
 
+ul {
+    margin-top: 6px !important;
+}
+
+.dropdown-item {
+    font-size: 15px;
+    color: rgba(0,0,0,.5);;
+}
+
+.dropdown-item:hover{
+    background-color: rgba(149, 113, 233, 0.162);
 }
 
 .cart-widget {
