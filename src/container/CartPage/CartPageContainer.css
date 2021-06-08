@@ -34,7 +34,8 @@
     margin: 1rem;
     background-color: rgba(157, 134, 212, 0.861);
     border: rgba(157, 134, 212, 0.861);
-    color: white;   
+    color: white;
+    margin-bottom: 15rem;   
 }
 
 .cart-button:hover {
@@ -157,4 +158,8 @@ a:hover {
     justify-content: flex-end;
     padding-right: 5rem;
     padding-bottom: 2rem;
+}
+
+.continue-buy {
+    margin-bottom: 15rem;
 }

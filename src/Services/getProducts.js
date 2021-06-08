@@ -1,4 +1,4 @@
-import db from '../firebase';
+import db from '../Firebase';
 // import data from './data'
 
 

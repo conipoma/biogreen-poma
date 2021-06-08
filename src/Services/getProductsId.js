@@ -1,4 +1,4 @@
-import db from '../firebase';
+import db from '../Firebase';
 
 const productsCollection = db.collection('productos')
 
