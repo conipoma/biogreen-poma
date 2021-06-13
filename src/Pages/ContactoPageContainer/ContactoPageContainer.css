@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
+
+.contact-form {
+    width: 70%;
+    padding: 2rem;
+    padding-bottom: 8rem;
+    background-color: rgba(206, 188, 248, 0.751);
+    margin-top: 3rem;
+    font-family: 'Abhaya Libre', serif;
+    margin-bottom: 4rem;
+}
+
+.form-control {
+    font-size: 12px;
+}
+
+.send {
+    background-color: rgba(146, 106, 239, 0.751);
+    border-color:rgba(146, 106, 239, 0.751);
+}
+
+.send:hover {
+    background-color: rgba(88, 28, 227, 0.751);
+}
+
+.thanks {
+    text-align: center;
+    padding-top: 2rem;
+    color: white;
+}

@@ -1,16 +1,24 @@
-.FooterPage {
+.FooterPage  {
     background-color: #A3AC9B;
-    height: 35px;
+    height: 60px;
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     position: fixed;
     bottom: 0;
     z-index:2000;
+    margin-top: 15rem;
 }
-
-.credits {
+.copy {
+    display: flex;
+    justify-content: center;
     color: rgb(237, 233, 222);
-    padding-top: 6px;
     font-size: 12px;
+} 
+
+.redes {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
 }

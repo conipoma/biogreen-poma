@@ -1,0 +1,20 @@
+.tales {
+    width: 300px;
+  }
+
+  .carousel-inner{
+    width:40%;
+    height: auto;
+  }
+
+#carouselExampleControls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-bottom: 15rem;
+    background-color: rgba(206, 188, 248, 0.34);
+}
+
+.img-carousel {
+  padding-top: 4rem;
+}

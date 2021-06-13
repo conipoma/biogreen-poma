@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import Cart from "../Cart/Cart";
 import { CartContext } from '../../Context/CartContext/CartContext';
-import { Button } from 'bootstrap-4-react';
+import { Button, BSpan } from 'bootstrap-4-react';
 
 import './CartList.css'
 
@@ -11,26 +11,32 @@ export default function CartList() {
     const { cart, clearCart, totalPrice } = useContext(CartContext);
     console.log("Cart List");
 
+    const cartOrder = ["Aromatizante", "Aceites", "Bebé", "Difusores", "Limpieza"]
+    const sortedCart = Object.keys(cart).map(key => cart[key]);
+    sortedCart.sort((a, b) => cartOrder.indexOf(a.category) - cartOrder.indexOf(b.category));
+
     return (
-        <div>
+
+        <div className="container-lg">
+            <React.Fragment>
+                <div className="container-lg table-cart">
+                <BSpan className="options" align="baseline">Categoría</BSpan>{' '}
+                <BSpan className="options" align="baseline">Item</BSpan>{' '}
+                <BSpan className="options" align="baseline">Cantidad</BSpan>{' '}
+                <BSpan className="options" align="baseline">Eliminar</BSpan>{' '}
+                <BSpan className="options" align="baseline">Total</BSpan>{' '}
+                </div>
+            </React.Fragment>
+
             <table className="table">
-                <thead>
-                    <tr className="cart-table">
-                        <th scope="col">Categoría</th>
-                        <th scope="col">Item</th>
-                        <th scope="col">Cantidad</th>
-                        <th scope="col">Eliminar</th>
-                        <th scope="col">Total</th>
-                    </tr>
-                </thead>
                 <tbody>
-                    {cart.map(item => (
+                    {sortedCart.map(item => (
                         <Cart key={item.id} itemSale={item} />
                     ))}
                 </tbody>
                 <tfoot>
                     { cart.length === 0 ? 
-                        <tr id="footer-carrito">
+                        <tr id="fter-cart">
                             <th className="empty-cart" scope="row" colSpan="5">Tu carrito esta vacío, comienza a comprar!</th>
                         </tr>
                         :
@@ -38,7 +44,7 @@ export default function CartList() {
                             <td></td>
                             <td></td>
                             <td>
-                                <Button type="button" id="vaciar-carrito" onClick={clearCart}>
+                                <Button type="button" className="clear-carrito" id="vaciar-carrito" onClick={clearCart}>
                                     Vaciar Carrito
                                 </Button>
                             </td>

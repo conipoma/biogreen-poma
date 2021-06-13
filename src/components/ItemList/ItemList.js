@@ -11,7 +11,7 @@ export default function ItemList({itemData}) {
                 itemData.map((posts) => {
 
                     return ( 
-                        <Item key={posts.id} title={posts.title} image={posts.image} id={posts.id} category={posts.category} />
+                        <Item key={posts.id} title={posts.title} image={posts.image} id={posts.id} category={posts.category} price={posts.price}/>
                     )})
                 }
         </div>

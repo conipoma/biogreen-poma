@@ -5,11 +5,12 @@ import Header from '../../components/Header/Header';
 import HomePageContainer from '../../Pages/HomePageContainer';
 import ProductosPageContainer from '../../Pages/ProductosPageContainer';
 import ProductItemContainer from '../../Pages/ProductItemContainer'
-import ContactoPageContainer from '../../Pages/ContactoPageContainer';
-import NosotrosPageContainer from '../../Pages/NosotrosPageContainer';
+import ContactoPageContainer from '../../Pages/ContactoPageContainer/ContactoPageContainer';
+import NosotrosPageContainer from '../../Pages/NosotrosPageContainer/NosotrosPageContainer';
 import Footer from '../../components/Footer/Footer';
 import CartPageContainer from '../CartPage/CartPageContainer';
-
+import CheckoutPageContainer from '../../Pages/CheckoutPageContainer/CheckoutPageContainer';
+import Carousel from '../../components/Carousel/Carousel'
 
 export default function AppRouter() {
     return (
@@ -22,7 +23,8 @@ export default function AppRouter() {
           {/* Ruta home */}
           <Route exact path="/">
             <div className="sldoHome">
-              <Header greeting="Somos bienestar para tu hogar" name="Essencial"/>  
+              <Header greeting="Somos bienestar para tu hogar" name="Essencial"/> 
+              <Carousel/> 
             </div> 
               <HomePageContainer />
           </Route>
@@ -45,6 +47,9 @@ export default function AppRouter() {
           {/* Ruta de cart */}
           <Route path="/cart">
             <CartPageContainer />
+          </Route>
+          <Route path="/checkout">
+            <CheckoutPageContainer />
           </Route>
           </Switch>
         </Router>

@@ -2,7 +2,7 @@
 
 .helloHome {
     background-image: url(./image/aromaterapia.png);
-    height: 50rem;
+    height: 30rem;
     margin-top: 1rem;
     background-size: cover;
     background-repeat: no-repeat;
@@ -22,18 +22,14 @@ h2 {
     font-size: 4vh;
     text-align: center;
     background-color: rgba(255, 254, 254, 0.627);
-    /* margin-top: 200px; */
 
 }
 
-h3 {
+.greeting {
     font-family: 'Abhaya Libre', serif;
     text-align: center;
-    font-size: 2vh;
+    font-size: 2rem;
     padding-top: 200px;
     background-color: rgba(255, 254, 254, 0.627);
     margin-top: 10px;
-
-
-
 }

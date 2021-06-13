@@ -8,7 +8,7 @@ export default function Header(props){
           <div className="divGral">
               <Container fluid className="helloHome">
                   <div className="sldoHome">
-                      <h3>{props.greeting}</h3>
+                      <h3 className="greeting">{props.greeting}</h3>
                       <h2>Todo va a estar bien...</h2>
                   </div>
               </Container>

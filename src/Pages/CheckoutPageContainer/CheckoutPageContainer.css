@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
+
+.checkOut {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Abhaya Libre', serif;
+    font-size: 30px;
+    color: #7d8675;
+    margin-top: 8rem;
+}
+
+.check-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}

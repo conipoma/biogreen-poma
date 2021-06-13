@@ -6,7 +6,6 @@ import ItemDetail from '../../components/ItemDetail/ItemDetail';
 
 export default function ItemDetailContainer() {
     const {id} = useParams();
-    console.log(typeof id);
     
     const [itemDetail, setItemDetail] = useState({
         title: '', 

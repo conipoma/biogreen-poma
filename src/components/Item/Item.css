@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
+
+
 ul {
     display: flex !important;
     flex-direction: row;
@@ -12,6 +15,7 @@ ul {
 
 ul .card {
     margin: 30px;
+    align-items: center;
 }
 
 .card-body {
@@ -22,4 +26,37 @@ ul .card {
 li { 
     display: flex;
     justify-content: center;
+}
+
+.card-price{
+    display: flex;
+    justify-content: center;
+    color: rgba(35, 35, 35, 0.7);
+}
+
+.card-category {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;    
+    font-family: 'Abhaya Libre', serif;
+    font-size: 1.4rem;
+    color: rgba(35, 35, 35, 0.7);
+}
+
+.button-verProducto {
+    width: 180px;
+    height: 40px;
+}
+
+.title-item {
+    padding-top: 20px;
+    font-size: 15px !important;
+    color: #898d86;
+}
+
+img .img-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
 }

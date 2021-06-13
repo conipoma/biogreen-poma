@@ -9,7 +9,7 @@ export default function NavBar() {
     let history = useHistory();
 
     return (
-      <Navbar expand="lg" light bg="light">
+      <Navbar expand="md" light bg="light">
         <Navbar.Brand onClick={()=>history.push('/')}>Essencial</Navbar.Brand>
         <Navbar.Toggler target="#navbarNav" />
         <Collapse navbar id="navbarNav">

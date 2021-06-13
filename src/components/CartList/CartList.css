@@ -4,3 +4,31 @@
     color: #A3AC9B;
     font-size: 16px;
 }
+
+
+.container {
+    width: 100%;
+}
+
+.vaciar-carrito {
+    margin: 1rem;
+    background-color: rgba(157, 134, 212, 0.861);
+    border: rgba(157, 134, 212, 0.861);
+    color: white; 
+}
+
+.vaciar-carrito:hover {
+    background-color: rgba(84, 55, 151, 0.799);
+}
+
+.table-cart {
+    display: flex;
+    justify-content: space-around ;
+    padding-top: 2rem;
+
+}
+
+.options {
+    padding-left: 2rem;
+    padding-right: 5rem;
+}
